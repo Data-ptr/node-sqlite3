@@ -114,6 +114,18 @@ NODE_WEBKIT_VERSION="0.8.4" # see latest version at https://github.com/rogerwang
 npm install sqlite3 --build-from-source --runtime=node-webkit --target_arch=ia32 --target=$(NODE_WEBKIT_VERSION)
 ```
 
+### Windows
+
+To build from source Windows prerequisites are:
+* Python 2.7
+* .net framework 2.0 SDK
+
+```sh
+set NODE_WEBKIT_VERSION="0.9.2" # see latest version at https://github.com/rogerwang/node-webkit#downloads
+set PYTHON=\Python72\python.exe
+npm install sqlite3 --build-from-source --runtime=node-webkit --target_arch=ia32 --target=%NODE_WEBKIT_VERSION%
+```
+
 This command internally calls out to [`node-pre-gyp`](https://github.com/mapbox/node-pre-gyp) which itself calls out to [`nw-gyp`](https://github.com/rogerwang/nw-gyp) when the `--runtime=node-webkit` option is passed.
 
 You can also run this command from within a `node-sqlite3` checkout:
