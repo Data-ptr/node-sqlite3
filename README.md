@@ -118,15 +118,14 @@ npm install sqlite3 --build-from-source --runtime=node-webkit --target_arch=ia32
 
 To build from source Windows prerequisites are:
 * Python 2.7
-* * .net framework 2.0 SDK
-* Platform SDK (Like Windows 7 SDK)
+* Platform SDK (Windows 7 SDK)
 
 ```cmd
-set NODE_WEBKIT_VERSION="0.9.2"
+set NODE_WEBKIT_VERSION="0.8.4"
 set PYTHON=C:\Python27\python.exe
-set PATH=C:\Python27\;C:\Program Files\Microsoft.NET\SDK\v2.0 64bit\Bin\;%PATH%
+set PATH=C:\Python27\;C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\;%PATH%
 
-sdkvars
+setenv /x86
 
 npm install sqlite3 --build-from-source --runtime=node-webkit --target_arch=ia32 --target=%NODE_WEBKIT_VERSION%
 ```
