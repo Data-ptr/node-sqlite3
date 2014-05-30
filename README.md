@@ -123,7 +123,7 @@ To build from source Windows prerequisites are:
 ```cmd
 set NODE_WEBKIT_VERSION="0.8.4"
 set PYTHON=C:\Python27\python.exe
-set PATH=C:\Python27\;C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\;%PATH%
+set PATH=C:\Python27\;C:\Users\Dataptr\Repo\autodice-stage-1_raw>set PATH=C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin;%PATH%
 
 setenv /x86
 
@@ -140,7 +140,9 @@ npm install --build-from-source --runtime=node-webkit --target_arch=ia32 --targe
 
 Remember the following:
 
-* You must provide the right `--target_arch` flag. `ia32` is needed to target 32bit node-webkit builds, while `x64` will target 64bit node-webkit builds (if available for your platform).
+* You must provide the right `--target_arch` flag. `ia32` is needed to target 32bit node-webkit builds, while `x64` will target 64bit node-webkit builds (if available for your platform, for example as of node-webkit 0.9.2 only a ia32 version is avaliable for Windows).
+
+* As of 1/6/2014 node-sqlite3 does not have a stable build for NODE.js v11 which node-webkit 0.9.2 uses, so if you want to use node-sqlite3 with node-webkit you MUST use node-webkit 0.8.4.
 
 * After the `sqlite3` package is built for node-webkit it cannot run in the vanilla Node.js (and vice versa).
    * For example, `npm test` of the node-webkit's package would fail.
